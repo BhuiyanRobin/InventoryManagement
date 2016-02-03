@@ -1,0 +1,114 @@
+﻿@model InventoryManagement.Models.DAO.Product
+
+@{
+    ViewBag.Title = "UpdateQuantity";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UpdateQuantity</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Product</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProductCategoryId, "ProductCategoryId", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ProductCategoryId", String.Empty)
+                @Html.ValidationMessageFor(model => model.ProductCategoryId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class=" control-label col-md-2">Product Name</label>
+            <div class="col-md-10">
+                <div class="col-md-10">
+                    <select id="productName">
+                        <option></option>
+
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Quantity, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Quantity)
+                @Html.ValidationMessageFor(model => model.Quantity)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" id="Add" value="Add" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+            $("#Add").click(function () {
+                var productCategoryId = $("#ProductCategoryId option:selected").val();
+                var productId = $("#productName option:selected").val();
+                var quantity = $("#Quantity").val();
+                var name = $("#productName option:selected").text();
+                var category = $("#ProductCategoryId option:selected").text();
+                var product = { productCategoryId: productCategoryId, productId: productId, quantity: quantity }
+                
+                alert(quantity + " "+name+" "+category+" " + "Added");
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("Update", "Product")',
+                    contentType: "application/json;charset=utf-8",
+                    data: JSON.stringify(product),
+                    dataType: "json",
+                    success: function (data) {
+                        alert(data);
+                        location.reload();
+                    },
+                });
+                location.reload();
+            });
+
+
+            $('#ProductCategoryId').change(function () {
+
+                var optionSelected = $(this).find("option:selected");
+                var mydata = { productCategoryId: optionSelected.val() };
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("AllProduct", "Order")',
+                    contentType: "application/json;charset=utf-8",
+                    data: JSON.stringify(mydata),
+                    dataType: "json",
+                    success: function (data) {
+                        $('#productName').empty().append('<option  value="">Select Product</option>');
+                        $("#productName").prop("selectedIndex", -1);
+                        $.each(data, function (index, value) {
+                            $('#productName').append($('<option/>', {
+                                value: value.Id,
+                                text: value.Name
+
+                            }));
+                        });
+                    },
+                });
+            });
+
+        });
+    </script>
+}

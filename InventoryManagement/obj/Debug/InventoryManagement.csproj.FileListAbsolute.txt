@@ -1,0 +1,120 @@
+J:\Working website\InventoryManagement\InventoryManagement\bin\InventoryManagement.dll.config
+J:\Working website\InventoryManagement\InventoryManagement\bin\InventoryManagement.dll
+J:\Working website\InventoryManagement\InventoryManagement\bin\InventoryManagement.pdb
+J:\Working website\InventoryManagement\InventoryManagement\bin\Antlr3.Runtime.dll
+J:\Working website\InventoryManagement\InventoryManagement\bin\EntityFramework.dll
+J:\Working website\InventoryManagement\InventoryManagement\bin\EntityFramework.SqlServer.dll
+J:\Working website\InventoryManagement\InventoryManagement\bin\Microsoft.Web.Infrastructure.dll
+J:\Working website\InventoryManagement\InventoryManagement\bin\Newtonsoft.Json.dll
+J:\Working website\InventoryManagement\InventoryManagement\bin\System.Web.Helpers.dll
+J:\Working website\InventoryManagement\InventoryManagement\bin\System.Web.Mvc.dll
+J:\Working website\InventoryManagement\InventoryManagement\bin\System.Web.Optimization.dll
+J:\Working website\InventoryManagement\InventoryManagement\bin\System.Web.Razor.dll
+J:\Working website\InventoryManagement\InventoryManagement\bin\System.Web.WebPages.Deployment.dll
+J:\Working website\InventoryManagement\InventoryManagement\bin\System.Web.WebPages.dll
+J:\Working website\InventoryManagement\InventoryManagement\bin\System.Web.WebPages.Razor.dll
+J:\Working website\InventoryManagement\InventoryManagement\bin\WebGrease.dll
+J:\Working website\InventoryManagement\InventoryManagement\bin\EntityFramework.xml
+J:\Working website\InventoryManagement\InventoryManagement\bin\EntityFramework.SqlServer.xml
+J:\Working website\InventoryManagement\InventoryManagement\bin\System.Web.Helpers.xml
+J:\Working website\InventoryManagement\InventoryManagement\bin\System.Web.Mvc.xml
+J:\Working website\InventoryManagement\InventoryManagement\bin\System.Web.Razor.xml
+J:\Working website\InventoryManagement\InventoryManagement\bin\System.Web.WebPages.xml
+J:\Working website\InventoryManagement\InventoryManagement\bin\System.Web.WebPages.Deployment.xml
+J:\Working website\InventoryManagement\InventoryManagement\bin\System.Web.WebPages.Razor.xml
+J:\Working website\InventoryManagement\InventoryManagement\bin\System.Web.Optimization.xml
+J:\Working website\InventoryManagement\InventoryManagement\bin\Newtonsoft.Json.xml
+J:\Working website\InventoryManagement\InventoryManagement\bin\Antlr3.Runtime.pdb
+J:\Working website\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Migrations.a.resources
+J:\Working website\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Migrations.a1.resources
+J:\Working website\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Migrations.a2.resources
+J:\Working website\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Migrations.a3.resources
+J:\Working website\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Migrations.a4.resources
+J:\Working website\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Migrations.a5.resources
+J:\Working website\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Migrations.a6.resources
+J:\Working website\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Migrations.a7.resources
+J:\Working website\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Migrations.a8.resources
+J:\Working website\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.csproj.GenerateResource.Cache
+J:\Working website\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.dll
+J:\Working website\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.pdb
+E:\InventoryManagement\InventoryManagement\bin\InventoryManagement.dll.config
+E:\InventoryManagement\InventoryManagement\bin\InventoryManagement.dll
+E:\InventoryManagement\InventoryManagement\bin\InventoryManagement.pdb
+E:\InventoryManagement\InventoryManagement\bin\Antlr3.Runtime.dll
+E:\InventoryManagement\InventoryManagement\bin\EntityFramework.dll
+E:\InventoryManagement\InventoryManagement\bin\EntityFramework.SqlServer.dll
+E:\InventoryManagement\InventoryManagement\bin\Microsoft.Web.Infrastructure.dll
+E:\InventoryManagement\InventoryManagement\bin\Newtonsoft.Json.dll
+E:\InventoryManagement\InventoryManagement\bin\System.Web.Helpers.dll
+E:\InventoryManagement\InventoryManagement\bin\System.Web.Mvc.dll
+E:\InventoryManagement\InventoryManagement\bin\System.Web.Optimization.dll
+E:\InventoryManagement\InventoryManagement\bin\System.Web.Razor.dll
+E:\InventoryManagement\InventoryManagement\bin\System.Web.WebPages.Deployment.dll
+E:\InventoryManagement\InventoryManagement\bin\System.Web.WebPages.dll
+E:\InventoryManagement\InventoryManagement\bin\System.Web.WebPages.Razor.dll
+E:\InventoryManagement\InventoryManagement\bin\WebGrease.dll
+E:\InventoryManagement\InventoryManagement\bin\EntityFramework.xml
+E:\InventoryManagement\InventoryManagement\bin\EntityFramework.SqlServer.xml
+E:\InventoryManagement\InventoryManagement\bin\System.Web.Helpers.xml
+E:\InventoryManagement\InventoryManagement\bin\System.Web.Mvc.xml
+E:\InventoryManagement\InventoryManagement\bin\System.Web.Razor.xml
+E:\InventoryManagement\InventoryManagement\bin\System.Web.WebPages.xml
+E:\InventoryManagement\InventoryManagement\bin\System.Web.WebPages.Deployment.xml
+E:\InventoryManagement\InventoryManagement\bin\System.Web.WebPages.Razor.xml
+E:\InventoryManagement\InventoryManagement\bin\System.Web.Optimization.xml
+E:\InventoryManagement\InventoryManagement\bin\Newtonsoft.Json.xml
+E:\InventoryManagement\InventoryManagement\bin\Antlr3.Runtime.pdb
+E:\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.csprojResolveAssemblyReference.cache
+E:\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Migrations.a.resources
+E:\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Migrations.a1.resources
+E:\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Migrations.a2.resources
+E:\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Migrations.a3.resources
+E:\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Migrations.a4.resources
+E:\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Migrations.a5.resources
+E:\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Migrations.a6.resources
+E:\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Migrations.a7.resources
+E:\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Migrations.a8.resources
+E:\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.csproj.GenerateResource.Cache
+E:\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.dll
+E:\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.pdb
+J:\InventoryManagement\InventoryManagement\bin\InventoryManagement.dll.config
+J:\InventoryManagement\InventoryManagement\bin\InventoryManagement.dll
+J:\InventoryManagement\InventoryManagement\bin\InventoryManagement.pdb
+J:\InventoryManagement\InventoryManagement\bin\Antlr3.Runtime.dll
+J:\InventoryManagement\InventoryManagement\bin\EntityFramework.dll
+J:\InventoryManagement\InventoryManagement\bin\EntityFramework.SqlServer.dll
+J:\InventoryManagement\InventoryManagement\bin\Microsoft.Web.Infrastructure.dll
+J:\InventoryManagement\InventoryManagement\bin\Newtonsoft.Json.dll
+J:\InventoryManagement\InventoryManagement\bin\System.Web.Helpers.dll
+J:\InventoryManagement\InventoryManagement\bin\System.Web.Mvc.dll
+J:\InventoryManagement\InventoryManagement\bin\System.Web.Optimization.dll
+J:\InventoryManagement\InventoryManagement\bin\System.Web.Razor.dll
+J:\InventoryManagement\InventoryManagement\bin\System.Web.WebPages.Deployment.dll
+J:\InventoryManagement\InventoryManagement\bin\System.Web.WebPages.dll
+J:\InventoryManagement\InventoryManagement\bin\System.Web.WebPages.Razor.dll
+J:\InventoryManagement\InventoryManagement\bin\WebGrease.dll
+J:\InventoryManagement\InventoryManagement\bin\EntityFramework.xml
+J:\InventoryManagement\InventoryManagement\bin\EntityFramework.SqlServer.xml
+J:\InventoryManagement\InventoryManagement\bin\System.Web.Helpers.xml
+J:\InventoryManagement\InventoryManagement\bin\System.Web.Mvc.xml
+J:\InventoryManagement\InventoryManagement\bin\System.Web.Razor.xml
+J:\InventoryManagement\InventoryManagement\bin\System.Web.WebPages.xml
+J:\InventoryManagement\InventoryManagement\bin\System.Web.WebPages.Deployment.xml
+J:\InventoryManagement\InventoryManagement\bin\System.Web.WebPages.Razor.xml
+J:\InventoryManagement\InventoryManagement\bin\System.Web.Optimization.xml
+J:\InventoryManagement\InventoryManagement\bin\Newtonsoft.Json.xml
+J:\InventoryManagement\InventoryManagement\bin\Antlr3.Runtime.pdb
+J:\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.csprojResolveAssemblyReference.cache
+J:\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Migrations.a.resources
+J:\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Migrations.a1.resources
+J:\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Migrations.a2.resources
+J:\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Migrations.a3.resources
+J:\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Migrations.a4.resources
+J:\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Migrations.a5.resources
+J:\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Migrations.a6.resources
+J:\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Migrations.a7.resources
+J:\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Migrations.a8.resources
+J:\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.csproj.GenerateResource.Cache
+J:\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.dll
+J:\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.pdb
+J:\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.Migrations.a9.resources

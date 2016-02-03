@@ -1,0 +1,146 @@
+﻿@model InventoryManagement.Models.DAO.Product
+
+@{
+    ViewBag.Title = "CheckProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CheckProduct</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>ProductCategory</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProductCategoryId, "ProductCategoryId", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ProductCategoryId", String.Empty)
+                @Html.ValidationMessageFor(model => model.ProductCategoryId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class=" control-label col-md-2">Product Name</label>
+            <div class="col-md-10">
+                <div class="col-md-10">
+                    <select id="productName">
+                        <option></option>
+
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" id="Show" value="Show" class="btn btn-default" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" id="AgainCheck" value="Again Check" class="btn btn-default" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" id="AllProduct" value="All Check" class="btn btn-default" />
+            </div>
+        </div>
+        
+        <div>
+            <table class="table table-bordered table-hover" id="checkInHand">
+                <thead>
+                    <tr>
+                        <td>Product Category</td>
+                        <td>Product Name</td>
+                        <td>Quantity</td>
+                    </tr>
+                </thead>
+
+            </table>
+
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+           
+            $('#ProductCategoryId').change(function () {
+
+                var optionSelected = $(this).find("option:selected");
+                var mydata = { productCategoryId: optionSelected.val() };
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("AllProduct", "Order")',
+                    contentType: "application/json;charset=utf-8",
+                    data: JSON.stringify(mydata),
+                    dataType: "json",
+                    success: function (data) {
+                        $('#productName').empty().append('<option  value="">Select Product</option>');
+                        $("#productName").prop("selectedIndex", -1);
+                        $.each(data, function (index, value) {
+                            $('#productName').append($('<option/>', {
+                                value: value.Id,
+                                text: value.Name
+
+                            }));
+                        });
+                    },
+                });
+            });
+            $("#Show").click(function () {
+                var productCategoryId = $("#ProductCategoryId option:selected").val();
+                var productId = $("#productName option:selected").val();
+                var product = { productCategoryId: productCategoryId, productId: productId }
+                $.ajax({
+                    type: "Post",
+                    url: '@Url.Action("CheckProductInHand", "Product")',
+                    contentType: "application/json;charset=utf-8",
+                    data: JSON.stringify(product),
+                    dataType: "json",
+                    success: function (data) {
+                        $('#checkInHand').append("<tr><td> " + data.ProductCategory + "</td>+<td> " + data.ProductName + "</td>+<td> " + data.ProductQuantity + "</td></tr>");
+                    },
+
+                });
+            });
+            $("#AgainCheck").click(function () {
+
+                location.reload();
+            });
+            $("#AllProduct").click(function () {
+                alert("come");
+                $.ajax({
+                    type: "Get",
+                    url: '@Url.Action("All", "Product")',
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        $.each(data, function (index, value) {
+                            $('#checkInHand').append("<tr><td> " + value.ProductCategory + "</td>+<td> " + value.ProductName + "</td>+<td> " + value.ProductQuantity + "</td></tr>");
+
+                        
+                        });
+
+                        
+                    },
+
+                });
+            });
+           
+        });
+    </script>
+}

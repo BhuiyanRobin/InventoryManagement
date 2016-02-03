@@ -1,0 +1,255 @@
+﻿@model InventoryManagement.Models.DAO.OrderTable
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>OrderTable</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CustomerId, "CustomerId", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("CustomerId", String.Empty)
+                @Html.ValidationMessageFor(model => model.CustomerId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ShipTo, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ShipTo)
+                @Html.ValidationMessageFor(model => model.ShipTo)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProductCategoryId, "ProductCategoryId", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ProductCategoryId", String.Empty)
+                @Html.ValidationMessageFor(model => model.ProductCategoryId)
+            </div>
+        </div>
+        <div class="form-group">
+            <label class=" control-label col-md-2">Product Name</label>
+            <div class="col-md-10">
+                <div class="col-md-10">
+                    <select id="productName">
+                        <option></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Quantity, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Quantity)
+                @Html.ValidationMessageFor(model => model.Quantity)
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="ProductInHand" class="control-label col-md-2">Product In Hand</label>
+            <div class="col-md-10">
+                <label id="ProductInHand" >0</label>
+            </div>
+            </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ShipingDate, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ShipingDate)
+                @Html.ValidationMessageFor(model => model.ShipingDate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Discount, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Discount)
+                @Html.ValidationMessageFor(model => model.Discount)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" id="Add" value="Add" class="btn btn-default" />
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.InvoiceNumber, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.InvoiceNumber)
+                @Html.ValidationMessageFor(model => model.InvoiceNumber)
+            </div>
+        </div>
+        <div>
+            <table class="table table-bordered table-hover" id="totalCost">
+                <thead>
+                    <tr>
+                        <td>Product Name</td>
+                        <td>Category</td>
+                        <td>Unit Mrp</td>
+                        <td>Qnt</td>
+                        <td>Discount</td>
+                        <td>Tax</td>
+                        <td>Tax1</td>
+                        <td>Total</td>
+                    </tr>
+                </thead>
+
+            </table>
+
+        </div>
+        <div class="form-group">
+            <label for="totalPrice" class="control-label col-md-2">Total Cost :</label>
+            <div class="col-md-offset-2 col-md-10">
+                <label id="totalPrice"></label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="button" id="Purchase" value="Purchase" class="btn btn-default" />
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+
+            var price = new Array();
+            var sl = 0;
+            var perUnitPrice;
+            var totalCosts = 0;
+            var invoice = makeInvoice();
+            var productInHand;
+
+            function makeInvoice() {
+                var text = "";
+                var possible = "ABC2432434DEF3243G4234HIJK234LMN4OP234QR34234TU34VW3242XY234Zab324cde234fghijklmnopqrstuvwxyz0123456789";
+
+                for (var i = 0; i < 7; i++)
+                    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+                return text;
+            }
+
+            $("#InvoiceNumber").val(invoice);
+            $("#Add").click(function() {
+                var quantity = $("#Quantity").val();
+                var id = $("#productName option:selected").val();
+                var productCategory = $("#ProductCategoryId option:selected").text();
+                var m = $("#ProductCategoryId option:selected").val();
+                var productName = $("#productName option:selected").text();
+
+                var customerId = $("#CustomerId option:selected").val();
+                var shipTo = $("#ShipTo").val();
+                var shippingDate = $("#ShipingDate option:selected").text();
+                var n = $("#productName option:selected").val();
+                productInHand = productInHand - quantity;
+
+                $("#ProductInHand").text(productInHand);
+                if (quantity == "" || id == 0 || m == 0 || productName == 0) {
+                    alert("Please insert Product category and product quantity and product name");
+                } else {
+                    var pId = { id: id }
+                    sl = sl + 1;
+                    var untiPrice = perUnitPrice;
+                    var tax1 = 0;
+                    var totalCost = untiPrice * quantity;
+                    var discount = (($("#Discount").val()) / 100) * totalCost;
+                    var tax = (totalCost - discount) * .15;
+                    var total = totalCost + tax - discount;
+                    totalCosts = totalCosts + total;
+                    var totalInfo = { productName: productName, unitPrice: untiPrice, quantity: quantity, productCategory: productCategory, discount: discount, tax: tax, tax1: tax1, total: total };
+
+
+                    $('#totalCost').append("<tr><td> " + sl + "</td>+<td> " + totalInfo.productName + "</td>+<td> " + totalInfo.unitPrice + "</td>+<td> " + totalInfo.quantity + "</td>+<td> " + totalInfo.discount + "</td>+<td> " + totalInfo.tax + "</td>+<td> " + totalInfo.tax1 + "</td>+<td> " + totalInfo.total + "</td></tr>");
+                    $("#totalPrice").text(totalCosts);
+                    var order = { InvoiceNumber: invoice, CustomerId: customerId, ShipTo: shipTo, ProductCategoryId: m, Quantity: quantity, TotalAmount: total, ShipingDate: shippingDate, Discount: discount, Tax: tax, productId: pId.id }
+                    $.ajax({
+                        type: "POST",
+                        url: '@Url.Action("OrderInfo", "Order")',
+                        contentType: "application/json;charset=utf-8",
+                        data: JSON.stringify(order),
+                        dataType: "json",
+                        success: function(data) {
+                            alert("added");
+                        },
+
+                    });
+                }
+
+
+            });
+
+            $('#productName').change(function() {
+                var id = $("#productName option:selected").val();
+                var pId = { id: id }
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("SearchProduct", "Order")',
+                    contentType: "application/json;charset=utf-8",
+                    data: JSON.stringify(pId),
+                    dataType: "json",
+                    success: function(data) {
+                        perUnitPrice = data.UnitPrice;
+                        $("#ProductInHand").text(data.Quantity);
+                        productInHand = data.Quantity;
+                    },
+
+                });
+            });
+
+
+            $('#ProductCategoryId').change(function() {
+
+                var optionSelected = $(this).find("option:selected");
+                var mydata = { productCategoryId: optionSelected.val() };
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("AllProduct", "Order")',
+                    contentType: "application/json;charset=utf-8",
+                    data: JSON.stringify(mydata),
+                    dataType: "json",
+                    success: function(data) {
+                        $('#productName').empty().append('<option  value="">Select Product</option>');
+                        $("#productName").prop("selectedIndex", -1);
+                        $.each(data, function(index, value) {
+                            $('#productName').append($('<option/>', {
+                                value: value.Id,
+                                text: value.Name
+
+                            }));
+                        });
+                    },
+                });
+            });
+            $("#Purchase").click(function () {
+
+                location.reload();
+            });
+
+        });
+    </script>
+}
